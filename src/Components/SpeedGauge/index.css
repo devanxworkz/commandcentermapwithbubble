@@ -1,0 +1,53 @@
+body {
+  background: #0a0f14; /* dark background for contrast */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+.temp-card {
+  background: rgba(15, 20, 30, 0.95);
+  border: 2px solid rgba(0, 224, 255, 0.3);
+  border-radius: 16px;
+  padding: 24px 28px;
+  width: 200px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  box-shadow: inset 0 0 8px rgba(0, 224, 255, 0.1),
+              0 0 12px rgba(0, 224, 255, 0.2);
+}
+
+.temp-header {
+  font-size: 14px;
+  letter-spacing: 2px;
+  color: #00e0ff;
+  margin-bottom: 16px;
+}
+
+.temp-content {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.temp-icon svg {
+  width: 36px;
+  height: 36px;
+}
+
+.temp-value {
+  font-size: 40px;
+  font-weight: bold;
+  color: #00e0ff;
+  display: flex;
+  align-items: flex-start;
+}
+
+.temp-unit {
+  font-size: 20px;
+  margin-left: 4px;
+  opacity: 0.8;
+}

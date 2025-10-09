@@ -1,0 +1,64 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap'); */
+
+
+
+@keyframes slideIn {
+  from {
+    transform: translateX(-100%);
+  }
+  to {
+    transform: translateX(0);
+  }
+}
+@keyframes slideOut {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-100%);
+  }
+}
+.animate-slideIn {
+  animation: slideIn 0.4s ease-out forwards;
+}
+.animate-slideOut {
+  animation: slideOut 0.4s ease-in forwards;
+}
+
+
+
+
+@layer components {
+  .card-small {
+    @apply min-h-[140px] max-w-[280px] p-2;
+  }
+
+  .card-medium {
+    @apply min-h-[180px] max-w-sm p-3;
+  }
+
+  .card-large {
+    @apply min-h-[240px] max-w-md p-4;
+  }
+}
+
+.leaflet-container {
+  width: 100%;
+  height: 100vh;
+}
+
+
+@keyframes marquee {
+  0% { transform: translateX(0%); }
+  100% { transform: translateX(-100%); }
+}
+
+.animate-marquee {
+  display: inline-block;
+  padding-left: 100%;
+  animation: marquee 15s linear infinite;
+}

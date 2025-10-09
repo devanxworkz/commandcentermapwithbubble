@@ -1,0 +1,107 @@
+
+/* Full-page dark background with subtle gradient */
+.login-background {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #1c1c1e, #111114);
+  font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Container for login box */
+.login-container {
+  background: #1f1f23;
+  padding: 50px 40px;
+  border-radius: 12px;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 360px;
+  transition: transform 0.3s ease;
+}
+
+.login-container:hover {
+  transform: translateY(-3px);
+}
+
+/* Logo styling */
+.logo {
+  width: 100px;
+  height: auto;
+  margin-bottom: 20px;
+  border-radius: 8px;
+}
+
+/* Heading */
+.login-container h2 {
+  color: #f5f5f5;
+  margin-bottom: 30px;
+  font-size: 24px;
+  font-weight: 600;
+}
+
+/* Error message */
+.error {
+  color: #ff6b6b;
+  margin-bottom: 15px;
+  font-weight: 500;
+  text-align: center;
+}
+
+/* Input fields */
+.login-container input {
+  width: 100%;
+  padding: 14px 16px;
+  margin-bottom: 20px;
+  border-radius: 8px;
+  border: 1px solid #333;
+  background: #2a2a2e;
+  color: #f5f5f5;
+  font-size: 16px;
+  outline: none;
+  transition: border 0.3s, background 0.3s;
+}
+
+.login-container input:focus {
+  border: 1px solid #0a84ff;
+  background: #333338;
+}
+
+/* Login button */
+.login-container button {
+  width: 100%;
+  padding: 14px 16px;
+  border-radius: 8px;
+  border: none;
+  background: #0a84ff;
+  color: #fff;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s, transform 0.2s;
+}
+
+.login-container button:hover {
+  background: #006fdd;
+  transform: translateY(-2px);
+}
+
+/* Smooth text selection */
+::selection {
+  background: #0a84ff;
+  color: #fff;
+}
+
+
+.hedif{
+  align-items: center;
+  text-align: center;
+}
+
+
+
+
+
