@@ -113,7 +113,7 @@ const HistoryChart = ({ vin,  historyDatas  }) => {
     setShowHistoryChart(false);
 
     try {
-      const url = `https://ble.nerdherdlab.com/backtimedatfetch.php?vin=${encodeURIComponent(
+      const url = `https://commandcenter.rivotmotors.com/backtimedatfetch.php?vin=${encodeURIComponent(
         vin
       )}&start=${encodeURIComponent(toUTC(startDateTime))}&end=${encodeURIComponent(
         toUTC(endDateTime)

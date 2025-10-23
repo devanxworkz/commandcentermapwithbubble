@@ -1,6 +1,11 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./indexLogin.css";
+import Cookies from "js-cookie";
+
+
+
+
 
 export default function Login({ setIsLoggedIn }) {
   const [username, setUsername] = useState("");
@@ -31,6 +36,14 @@ export default function Login({ setIsLoggedIn }) {
       setError("Invalid username or password");
     }
   };
+
+
+  
+if (username === correctUsername && password === correctPassword) {
+  Cookies.set("isLoggedIn", "true", { expires: 1 }); // expires in 1 day
+  setIsLoggedIn(true);
+  navigate("/dashboard");
+}
 
   return (
     <div className="login-background">

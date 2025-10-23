@@ -37,7 +37,7 @@ export default function TelemetryChart({ vin }) {
   useEffect(() => {
     if (!vin) return;
 
-    const apiUrl = `https://ble.nerdherdlab.com/telemery.php?vin=${vin}`;
+    const apiUrl = `https://commandcenter.rivotmotors.com/telemery.php?vin=${vin}`;
 
     const fetchData = async () => {
       try {

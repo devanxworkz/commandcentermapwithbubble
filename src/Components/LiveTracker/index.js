@@ -103,7 +103,7 @@ export default function LiveTracker({ vin }) {
     const fetchLiveData = async () => {
       try {
         const res = await fetch(
-          `https://ble.nerdherdlab.com/livemaploction.php?vin=${vin}`
+          `https://commandcenter.rivotmotors.com/livemaploction.php?vin=${vin}`
         );
         const json = await res.json();
 
@@ -139,43 +139,43 @@ export default function LiveTracker({ vin }) {
 
   return (
     <div style={{ height: "100%", width: "100%" }}>
-      <MapContainer
-        center={currentPos || [20.5937, 78.9629]}
-        zoom={6}
-        scrollWheelZoom={true}
-        style={{ height: "100%", width: "100%" }}
-      >
-        {/* 🗺️ OSM tile layer */}
-        <TileLayer
-          attribution='© OpenStreetMap contributors'
-          url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-        />
+     <MapContainer
+  center={currentPos || [20.5937, 78.9629]}
+  zoom={6}
+  minZoom={3}           // allow zoom out like Google Maps
+  maxZoom={21}          // max zoom like Google Maps
+  scrollWheelZoom={true}
+  zoomControl={true}    // show zoom buttons
+  style={{ height: "100%", width: "100%" }}
+  dragging={true}
+  doubleClickZoom={true}
+  zoomAnimation={true}   // smooth zoom
+  inertia={true}         // smooth panning
+>
+  <TileLayer
+    attribution='© OpenStreetMap contributors'
+    url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+  />
 
-        {points.length > 1 && <Polyline positions={points} color="#00BFFF" />}
+  {points.length > 1 && <Polyline positions={points} color="#00BFFF" weight={4} opacity={0.9} />}
 
-        {currentPos && (
-          <>
-            <Marker position={currentPos}>
-              <Popup>
-                <strong>Vehicle VIN:</strong> {vin}
-                <br />
-                <strong>Lat:</strong> {currentPos.lat.toFixed(5)}
-                <br />
-                <strong>Lng:</strong> {currentPos.lng.toFixed(5)}
-              </Popup>
-            </Marker>
+  {currentPos && (
+    <>
+      <Marker position={currentPos}>
+        <Popup>
+          <strong>Vehicle VIN:</strong> {vin}
+          <br />
+          <strong>Lat:</strong> {currentPos.lat.toFixed(5)}
+          <br />
+          <strong>Lng:</strong> {currentPos.lng.toFixed(5)}
+        </Popup>
+      </Marker>
 
-            <AutoPanMap position={currentPos} />
+      <AutoPanMap position={currentPos} />
+    </>
+  )}
+</MapContainer>
 
-            {/* Optional: Custom 3D scooter overlay */}
-            {/* <ThreeDScooter
-              map={mapRef.current}
-              position={currentPos}
-              prevPosition={prevPos}
-            /> */}
-          </>
-        )}
-      </MapContainer>
     </div>
   );
 }

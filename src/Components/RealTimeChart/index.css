@@ -422,3 +422,15 @@ background-image:url radial-gradient(circle at top left, #0d0d0d, #1C0A00 70%);
 .recharts-surface:focus {
   outline: none !important;
 }
+
+/* Add to your global CSS */
+.leaflet-container {
+  z-index: 0 !important;
+}
+
+
+.clip-path-bookmark {
+  clip-path: polygon(0 0, 100% 0, 90% 100%, 10% 100%);
+}
+
+ 
